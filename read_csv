@@ -1,0 +1,19 @@
+'''
+练习read_csv中的header参数用法
+
+student.csv
+      id   name    age     height   weight
+      231  li       13      178      70kg
+      223  niu      18      165      78kg
+      123  kgh     23       187       67kg
+      341  wang      17     180      65kg
+'''
+
+import pandas as pd
+import numpy as np
+
+student = pd.read_csv(filepath_or_buffer='/home/data/stuent.csv',sep='\s+',header=[1,2])
+#使用第一行和第二行作为列索引
+
+student.loc[0,['niu','18']]
+#可以使用第一行作为列索引定位对应的列，但不可以使用第二行作为索引
